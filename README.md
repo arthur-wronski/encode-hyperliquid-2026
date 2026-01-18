@@ -1,10 +1,14 @@
-# Slyck - the simplest way to HyperLiquid
+# Slyck - Plug-and-Play Bridge Component
 
-A seamless, one-click bridge component for onboarding users to Hyperliquid's HyperEVM from any blockchain.
+A drop-in React component that lets any dApp onboard users to HyperEVM with zero friction. Just `npm install` and embed.
 
-## Overview
+## Demo
 
-This project provides a production-ready, reusable React component that enables users to bridge tokens from any supported chain to HyperEVM using LI.FI's cross-chain routing infrastructure.
+[Watch the full walkthrough →](https://streamable.com/ge2ctm)
+
+## What is Slyck?
+
+Slyck is a production-ready bridge component you can embed into any application to streamline cross-chain onboarding. Built with LI.FI's routing infrastructure, it handles the complexity of bridging from 50+ chains while exposing a simple React interface.
 
 ## Key Features
 
@@ -26,6 +30,29 @@ This project provides a production-ready, reusable React component that enables 
 - **TypeScript support**: Full type safety throughout
 - **Minimal dependencies**: Built with Next.js, shadcn/ui, and Tailwind CSS
 - **Configurable**: Supports custom callbacks, default values, and styling
+
+## Usage
+
+```tsx
+import { SlyckBridge } from '@slyck/bridge'
+
+function App() {
+  return (
+    <SlyckBridge 
+      destinationChain="hyperevm"
+      onComplete={(txHash) => console.log('Bridge complete:', txHash)}
+    />
+  )
+}
+```
+
+### Configuration Options
+
+Slyck ships with flexible configuration to fit your use case:
+- **Hardcode chains**: Lock source or destination chain for focused flows
+- **Restrict tokens**: Whitelist specific tokens for your application
+- **Fee integration**: Capture revenue using LI.FI's fee mechanism
+- **Custom styling**: Full control over theme and appearance
 
 ## How It Works
 
@@ -68,7 +95,14 @@ The component executes the bridge transaction with:
 
 <img width="523" height="548" alt="Screenshot 2026-01-17 at 22 52 15" src="https://github.com/user-attachments/assets/1cfadc01-415a-42aa-b5b3-b0bfff325788" />
 
-### Setup
+## Next Steps
+
+- **NPM Package**: Publish as `@slyck/bridge` for one-line installation
+- **Auto-bridging**: Offer automatic HyperLiquid bridging for certain assets
+- **Revenue Sharing**: Integrate LI.FI's fee mechanism to capture a percentage of volume
+- **Chain Presets**: Pre-configured components for common bridging patterns
+
+## Development
 
 ```bash
 # Clone repository
